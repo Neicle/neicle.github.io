@@ -13,9 +13,11 @@
     :root { color-scheme: light dark; }
     html { scroll-behavior: smooth; }
     body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, "Helvetica Neue", Arial; }
+    .card { border-radius: 1.25rem; border: 1px solid rgba(100,116,139,.25); padding: 1.25rem; }
   </style>
 </head>
 <body class="bg-white text-slate-800 dark:bg-slate-950 dark:text-slate-100">
+  <!-- Header -->
   <header class="sticky top-0 z-40 backdrop-blur border-b border-slate-200/60 dark:border-slate-800/60">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
       <a href="#" class="text-lg font-extrabold tracking-tight">NS<span class="text-indigo-500">·</span>Portfolio</a>
@@ -29,12 +31,16 @@
     </div>
   </header>
 
+  <!-- Hero -->
   <section class="max-w-6xl mx-auto px-4 sm:px-6 py-14">
     <div class="grid md:grid-cols-2 gap-8 items-center">
       <div>
         <h1 class="text-4xl md:text-5xl font-extrabold leading-tight tracking-tight">Nemanja Stojanović</h1>
         <p class="mt-3 text-lg text-slate-600 dark:text-slate-300">IT inženjer • Administracija baza • Python & Java • CCNA</p>
-        <p class="mt-4 text-slate-700 dark:text-slate-300">Bavim se automatizacijom, web scraping-om i analizom podataka. Najviše radim sa Selenium-om, SQLite-om i AI evaluacijama oglasa.</p>
+        <p class="mt-4 text-slate-700 dark:text-slate-300">
+          Bavim se automatizacijom, web scraping-om i analizom podataka. Gradim alate za prikupljanje, čišćenje i rangiranje informacija,
+          sa fokusom na stabilne scraperske procese, SQLite/CSV pipeline-ove i AI/heurističko bodovanje rezultata.
+        </p>
         <div class="mt-6 flex flex-wrap gap-3">
           <a href="https://github.com/Neicle" class="inline-flex items-center rounded-2xl border border-slate-300/70 dark:border-slate-700 px-4 py-2 text-sm hover:bg-slate-50 dark:hover:bg-slate-900">GitHub profil</a>
           <a href="#kontakt" class="inline-flex items-center rounded-2xl bg-indigo-600 text-white px-4 py-2 text-sm hover:bg-indigo-500">Kontakt</a>
@@ -45,20 +51,130 @@
 
   <!-- Projekti -->
   <section id="projekti" class="max-w-6xl mx-auto px-4 sm:px-6 py-14">
-    <h2 class="text-2xl font-bold">🚀 Istaknuti projekti</h2>
+    <h2 class="text-2xl font-bold flex items-center gap-2">🚀 Istaknuti projekti</h2>
     <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      <article class="border border-slate-200 dark:border-slate-800 rounded-3xl p-5 hover:shadow-md transition-shadow">
+      <article class="card hover:shadow-md transition-shadow">
         <h3 class="font-semibold text-lg">KP Deal Finder (Scraper + AI)</h3>
-        <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Automatsko prikupljanje oglasa sa KupujemProdajem, AI bodovanje i izdvajanje top ponuda.</p>
+        <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Automatsko prikupljanje oglasa sa KupujemProdajem, AI/heuristike za bodovanje i top-lista ponuda.</p>
+        <ul class="mt-3 text-xs text-slate-500 list-disc list-inside">
+          <li>SQLite skladištenje • CSV/JSON izvozi</li>
+          <li>Random pauze, user-agent rotacija, retry/backoff</li>
+          <li>Fast/Full scan mod, sortiranje po ceni i skoru</li>
+        </ul>
+        <!-- <a href="LINK_DO_REPOA" class="mt-3 inline-block text-indigo-600 hover:text-indigo-500 text-sm">Repo</a> -->
       </article>
-      <article class="border border-slate-200 dark:border-slate-800 rounded-3xl p-5 hover:shadow-md transition-shadow">
+
+      <article class="card hover:shadow-md transition-shadow">
         <h3 class="font-semibold text-lg">AI Evaluator</h3>
-        <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">AI model boduje oglase na osnovu cene, opisa i reputacije prodavca.</p>
+        <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Skoring 0–100 na osnovu cene, opisa, reputacije naloga i potražnje (radi i offline kroz heuristike).</p>
+        <ul class="mt-3 text-xs text-slate-500 list-disc list-inside">
+          <li>Konfigurisani kriterijumi (criteria.txt)</li>
+          <li>Integracija sa CSV/SQLite</li>
+        </ul>
       </article>
-      <article class="border border-slate-200 dark:border-slate-800 rounded-3xl p-5 hover:shadow-md transition-shadow">
-        <h3 class="font-semibold text-lg">PSIT Mini-sajt</h3>
-        <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Stranica za IT podršku i mrežne usluge (CCNA, serveri, ruteri, svičevi).</p>
+
+      <article class="card hover:shadow-md transition-shadow">
+        <h3 class="font-semibold text-lg">PSIT mini-sajt</h3>
+        <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">IT podrška na daljinu, mrežne usluge (CCNA), ruteri/svičevi, serveri, backup i sigurnost.</p>
+        <!-- <a href="LINK" class="mt-3 inline-block text-indigo-600 hover:text-indigo-500 text-sm">Pogledaj</a> -->
       </article>
+    </div>
+  </section>
+
+  <!-- Veštine -->
+  <section id="vestine" class="max-w-6xl mx-auto px-4 sm:px-6 py-14">
+    <h2 class="text-2xl font-bold">🧰 Veštine</h2>
+
+    <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div class="card">
+        <h3 class="font-semibold">Jezici i alati</h3>
+        <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">
+          <strong>Python</strong> (automatizacija, skripting, obrada podataka), <strong>Java</strong> (desktop/CLI alati),
+          <strong>SQL/SQLite</strong> (modeliranje, upiti, optimizacija), <strong>Git</strong> (grananje, PR, code review).
+        </p>
+      </div>
+
+      <div class="card">
+        <h3 class="font-semibold">Web scraping & automatizacija</h3>
+        <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">
+          <strong>Selenium / Playwright</strong>, <strong>Requests</strong>, <strong>BeautifulSoup</strong>, rad sa dinamičkim stranicama,
+          paginacija, robustni retry/backoff obrasci, randomizacija i basic anti-bot tehnike.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3 class="font-semibold">Analitika i AI/heuristike</h3>
+        <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">
+          Skoring ponuda (0–100), heuristička pravila bez interneta, normalizacija cena (RSD/EUR), izdvajanje “hitnih”/isplativih ponuda,
+          CSV/JSON/SQLite pipeline-ovi i jednostavni dashboard pregledi.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3 class="font-semibold">Mreže i IT podrška</h3>
+        <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">
+          <strong>CCNA</strong> osnove (ruteri/svičevi, VLAN, ACL), administracija i održavanje radnih stanica, udaljena podrška,
+          best-practices za bezbednost i bekap.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3 class="font-semibold">Front-end osnove</h3>
+        <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">
+          <strong>HTML</strong>, <strong>Tailwind CSS</strong> (brza izrada čistih UI komponenti), pristupačnost i responzivan dizajn.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3 class="font-semibold">Prakse rada</h3>
+        <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">
+          Pisanje čitljivog koda, logovanje i evidencija, modularna arhitektura skripti, README i primeri upotrebe, export u CSV/JSON/PDF.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Iskustvo -->
+  <section id="iskustvo" class="max-w-6xl mx-auto px-4 sm:px-6 py-14">
+    <h2 class="text-2xl font-bold">💼 Iskustvo i obrazovanje</h2>
+
+    <div class="mt-6 grid md:grid-cols-2 gap-6">
+      <div class="card">
+        <h3 class="font-semibold">Radno iskustvo</h3>
+        <ul class="mt-2 text-sm text-slate-600 dark:text-slate-300 space-y-3">
+          <li>
+            <strong>IT inženjer / DBA — AQUA PROMET DOO</strong><br/>
+            Održavanje i administracija baza podataka, izrada skripti za automatizaciju rutinskih zadataka,
+            praćenje performansi i sigurnosne procedure; podrška korisnicima i dokumentovanje procesa.
+          </li>
+          <li>
+            <strong>Administrativni asistent — CASA DI MODA</strong><br/>
+            Rad sa dokumentacijom i evidencijama, koordinacija internih procesa, ad-hoc IT podrška i poboljšanje operativnih tokova.
+          </li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3 class="font-semibold">Obrazovanje</h3>
+        <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">
+          <strong>Toplička akademija strukovnih studija</strong> — Primenjene informacione tehnologije
+        </p>
+        <p class="mt-3 text-sm text-slate-600 dark:text-slate-300">
+          Kursevi i sertifikati: <strong>Java</strong>, <strong>CCNA</strong>, <strong>Git</strong>, <strong>Python</strong>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kontakt -->
+  <section id="kontakt" class="max-w-6xl mx-auto px-4 sm:px-6 py-14">
+    <div class="card text-center">
+      <h2 class="text-2xl font-bold">📫 Kontakt</h2>
+      <p class="mt-2 text-slate-600 dark:text-slate-300">Otvoren sam za saradnju i freelance projekte.</p>
+      <div class="mt-5 flex justify-center gap-3">
+        <a href="mailto:nemanja.s.ja95@gmail.com" class="inline-flex items-center rounded-2xl bg-indigo-600 text-white px-4 py-2 text-sm hover:bg-indigo-500">Pošalji email</a>
+        <a href="https://github.com/Neicle" class="inline-flex items-center rounded-2xl border border-slate-300/70 dark:border-slate-700 px-4 py-2 text-sm hover:bg-slate-50 dark:hover:bg-slate-900">GitHub</a>
+      </div>
     </div>
   </section>
 
@@ -67,7 +183,9 @@
   </footer>
 
   <script>
+    // footer godina
     document.getElementById('year').textContent = new Date().getFullYear();
+    // tema
     const toggle = document.getElementById('themeToggle');
     function applyTheme(t){
       document.documentElement.classList.toggle('dark', t === 'dark');
