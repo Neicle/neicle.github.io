@@ -1,33 +1,40 @@
 <!DOCTYPE html>
-<html lang="sr">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Nemanja Stojanović — Portfolio</title>
-  <meta name="description" content="Portfolio i projekti: web scraping, automatizacija, AI evaluacija oglasa, mreže (CCNA)." />
+  <meta name="description" content="Portfolio: web scraping, automation, AI heuristics, networking (CCNA)." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    :root { color-scheme: light dark; }
+    :root { color-scheme: dark light; }
     html { scroll-behavior: smooth; }
     body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, "Helvetica Neue", Arial; }
     .card { border-radius: 1.25rem; border: 1px solid rgba(100,116,139,.25); padding: 1.25rem; }
+    .ring-accent { box-shadow: 0 0 0 1px rgba(99,102,241,.35), 0 10px 25px rgba(37,99,235,.15); }
+    .grad-accent { background-image: linear-gradient(135deg, rgba(37,99,235,.2), rgba(99,102,241,.15) 40%, rgba(14,165,233,.15)); }
   </style>
 </head>
-<body class="bg-white text-slate-800 dark:bg-slate-950 dark:text-slate-100">
+<body class="bg-slate-950 text-slate-100">
   <!-- Header -->
-  <header class="sticky top-0 z-40 backdrop-blur border-b border-slate-200/60 dark:border-slate-800/60">
+  <header class="sticky top-0 z-40 backdrop-blur border-b border-slate-800/60 bg-slate-950/70">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
-      <a href="#" class="text-lg font-extrabold tracking-tight">NS<span class="text-indigo-500">·</span>Portfolio</a>
+      <a href="#" class="text-lg font-extrabold tracking-tight text-slate-100">
+        NS<span class="text-indigo-400">·</span><span class="text-sky-400">Portfolio</span>
+      </a>
       <nav class="hidden sm:flex gap-6 text-sm font-medium">
-        <a href="#projekti" class="hover:text-indigo-500">Projekti</a>
-        <a href="#vestine" class="hover:text-indigo-500">Veštine</a>
-        <a href="#iskustvo" class="hover:text-indigo-500">Iskustvo</a>
-        <a href="#kontakt" class="hover:text-indigo-500">Kontakt</a>
+        <a href="#projects" class="hover:text-sky-400" data-i18n="nav.projects">Projects</a>
+        <a href="#skills"   class="hover:text-sky-400" data-i18n="nav.skills">Skills</a>
+        <a href="#exp"      class="hover:text-sky-400" data-i18n="nav.experience">Experience</a>
+        <a href="#contact"  class="hover:text-sky-400" data-i18n="nav.contact">Contact</a>
       </nav>
-      <button id="themeToggle" class="rounded-2xl border border-slate-300/60 dark:border-slate-700 px-3 py-1 text-xs">Tema</button>
+      <div class="flex items-center gap-2">
+        <button id="langToggle" class="rounded-2xl border border-slate-700 px-3 py-1 text-xs hover:border-sky-500" aria-label="Language">EN</button>
+        <button id="themeToggle" class="rounded-2xl border border-slate-700 px-3 py-1 text-xs hover:border-sky-500" data-i18n="ui.theme">Theme</button>
+      </div>
     </div>
   </header>
 
@@ -35,167 +42,149 @@
   <section class="max-w-6xl mx-auto px-4 sm:px-6 py-14">
     <div class="grid md:grid-cols-2 gap-8 items-center">
       <div>
-        <h1 class="text-4xl md:text-5xl font-extrabold leading-tight tracking-tight">Nemanja Stojanović</h1>
-        <p class="mt-3 text-lg text-slate-600 dark:text-slate-300">IT inženjer • Administracija baza • Python & Java • CCNA</p>
-        <p class="mt-4 text-slate-700 dark:text-slate-300">
-          Bavim se automatizacijom, web scraping-om i analizom podataka. Gradim alate za prikupljanje, čišćenje i rangiranje informacija,
-          sa fokusom na stabilne scraperske procese, SQLite/CSV pipeline-ove i AI/heurističko bodovanje rezultata.
+        <h1 class="text-4xl md:text-5xl font-extrabold leading-tight tracking-tight">
+          Nemanja Stojanović
+        </h1>
+        <p class="mt-3 text-lg text-slate-300" data-i18n="hero.subtitle">
+          IT Engineer • Database Admin • Python & Java • CCNA
+        </p>
+        <p class="mt-4 text-slate-300" data-i18n="hero.text">
+          I build automation and web-scraping pipelines with robust SQLite/CSV data flows
+          and AI/heuristic scoring. Focus on stable crawlers (pagination, retries, anti-bot),
+          clean exports, and practical insights.
         </p>
         <div class="mt-6 flex flex-wrap gap-3">
-          <a href="https://github.com/Neicle" class="inline-flex items-center rounded-2xl border border-slate-300/70 dark:border-slate-700 px-4 py-2 text-sm hover:bg-slate-50 dark:hover:bg-slate-900">GitHub profil</a>
-          <a href="#kontakt" class="inline-flex items-center rounded-2xl bg-indigo-600 text-white px-4 py-2 text-sm hover:bg-indigo-500">Kontakt</a>
+          <a href="https://github.com/Neicle"
+             class="inline-flex items-center rounded-2xl border border-slate-700 px-4 py-2 text-sm hover:border-sky-500">
+            GitHub
+          </a>
+          <a href="#contact"
+             class="inline-flex items-center rounded-2xl bg-indigo-600 text-white px-4 py-2 text-sm hover:bg-indigo-500 ring-accent">
+            <span data-i18n="cta.contact">Contact</span>
+          </a>
         </div>
       </div>
+      <div class="grad-accent rounded-3xl border border-slate-800 min-h-[240px] ring-accent"></div>
     </div>
   </section>
 
-  <!-- Projekti -->
-  <section id="projekti" class="max-w-6xl mx-auto px-4 sm:px-6 py-14">
-    <h2 class="text-2xl font-bold flex items-center gap-2">🚀 Istaknuti projekti</h2>
+  <!-- Projects -->
+  <section id="projects" class="max-w-6xl mx-auto px-4 sm:px-6 py-14">
+    <h2 class="text-2xl font-bold flex items-center gap-2">
+      <span>🚀</span><span data-i18n="projects.title">Featured Projects</span>
+    </h2>
     <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      <article class="card hover:shadow-md transition-shadow">
+      <article class="card hover:shadow-md transition-shadow border-slate-800">
         <h3 class="font-semibold text-lg">KP Deal Finder (Scraper + AI)</h3>
-        <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Automatsko prikupljanje oglasa sa KupujemProdajem, AI/heuristike za bodovanje i top-lista ponuda.</p>
-        <ul class="mt-3 text-xs text-slate-500 list-disc list-inside">
-          <li>SQLite skladištenje • CSV/JSON izvozi</li>
-          <li>Random pauze, user-agent rotacija, retry/backoff</li>
-          <li>Fast/Full scan mod, sortiranje po ceni i skoru</li>
-        </ul>
-        <!-- <a href="LINK_DO_REPOA" class="mt-3 inline-block text-indigo-600 hover:text-indigo-500 text-sm">Repo</a> -->
+        <p class="mt-2 text-sm text-slate-300" data-i18n="projects.kp.text">
+          Automated KupujemProdajem scraping, heuristic/AI scoring and top-deals list.
+        </p>
       </article>
 
-      <article class="card hover:shadow-md transition-shadow">
+      <article class="card hover:shadow-md transition-shadow border-slate-800">
         <h3 class="font-semibold text-lg">AI Evaluator</h3>
-        <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Skoring 0–100 na osnovu cene, opisa, reputacije naloga i potražnje (radi i offline kroz heuristike).</p>
-        <ul class="mt-3 text-xs text-slate-500 list-disc list-inside">
-          <li>Konfigurisani kriterijumi (criteria.txt)</li>
-          <li>Integracija sa CSV/SQLite</li>
-        </ul>
+        <p class="mt-2 text-sm text-slate-300" data-i18n="projects.ai.text">
+          Score 0–100 based on price, description and seller reputation (works offline with heuristics).
+        </p>
       </article>
 
-      <article class="card hover:shadow-md transition-shadow">
-        <h3 class="font-semibold text-lg">PSIT mini-sajt</h3>
-        <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">IT podrška na daljinu, mrežne usluge (CCNA), ruteri/svičevi, serveri, backup i sigurnost.</p>
-        <!-- <a href="LINK" class="mt-3 inline-block text-indigo-600 hover:text-indigo-500 text-sm">Pogledaj</a> -->
+      <article class="card hover:shadow-md transition-shadow border-slate-800">
+        <h3 class="font-semibold text-lg">PSIT Mini-site</h3>
+        <p class="mt-2 text-sm text-slate-300" data-i18n="projects.psit.text">
+          Remote IT support and networking services (CCNA): routers/switches, servers, backup & security.
+        </p>
       </article>
     </div>
   </section>
 
-  <!-- Veštine -->
-  <section id="vestine" class="max-w-6xl mx-auto px-4 sm:px-6 py-14">
-    <h2 class="text-2xl font-bold">🧰 Veštine</h2>
-
-    <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-      <div class="card">
-        <h3 class="font-semibold">Jezici i alati</h3>
-        <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">
-          <strong>Python</strong> (automatizacija, skripting, obrada podataka), <strong>Java</strong> (desktop/CLI alati),
-          <strong>SQL/SQLite</strong> (modeliranje, upiti, optimizacija), <strong>Git</strong> (grananje, PR, code review).
-        </p>
-      </div>
-
-      <div class="card">
-        <h3 class="font-semibold">Web scraping & automatizacija</h3>
-        <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">
-          <strong>Selenium / Playwright</strong>, <strong>Requests</strong>, <strong>BeautifulSoup</strong>, rad sa dinamičkim stranicama,
-          paginacija, robustni retry/backoff obrasci, randomizacija i basic anti-bot tehnike.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3 class="font-semibold">Analitika i AI/heuristike</h3>
-        <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">
-          Skoring ponuda (0–100), heuristička pravila bez interneta, normalizacija cena (RSD/EUR), izdvajanje “hitnih”/isplativih ponuda,
-          CSV/JSON/SQLite pipeline-ovi i jednostavni dashboard pregledi.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3 class="font-semibold">Mreže i IT podrška</h3>
-        <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">
-          <strong>CCNA</strong> osnove (ruteri/svičevi, VLAN, ACL), administracija i održavanje radnih stanica, udaljena podrška,
-          best-practices za bezbednost i bekap.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3 class="font-semibold">Front-end osnove</h3>
-        <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">
-          <strong>HTML</strong>, <strong>Tailwind CSS</strong> (brza izrada čistih UI komponenti), pristupačnost i responzivan dizajn.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3 class="font-semibold">Prakse rada</h3>
-        <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">
-          Pisanje čitljivog koda, logovanje i evidencija, modularna arhitektura skripti, README i primeri upotrebe, export u CSV/JSON/PDF.
-        </p>
-      </div>
-    </div>
+  <!-- Skills -->
+  <section id="skills" class="max-w-6xl mx-auto px-4 sm:px-6 py-14">
+    <h2 class="text-2xl font-bold" data-i18n="skills.title">🧰 Skills</h2>
+    <p class="mt-4 text-slate-300" data-i18n="skills.desc">
+      Strong foundation in programming, automation, database administration and networking.
+      Skilled at building scraping pipelines, AI evaluation logic, and providing IT support
+      both locally and remotely.
+    </p>
   </section>
 
-  <!-- Iskustvo -->
-  <section id="iskustvo" class="max-w-6xl mx-auto px-4 sm:px-6 py-14">
-    <h2 class="text-2xl font-bold">💼 Iskustvo i obrazovanje</h2>
-
+  <!-- Experience -->
+  <section id="exp" class="max-w-6xl mx-auto px-4 sm:px-6 py-14">
+    <h2 class="text-2xl font-bold" data-i18n="exp.title">💼 Experience & Education</h2>
     <div class="mt-6 grid md:grid-cols-2 gap-6">
-      <div class="card">
-        <h3 class="font-semibold">Radno iskustvo</h3>
-        <ul class="mt-2 text-sm text-slate-600 dark:text-slate-300 space-y-3">
-          <li>
-            <strong>IT inženjer / DBA — AQUA PROMET DOO</strong><br/>
-            Održavanje i administracija baza podataka, izrada skripti za automatizaciju rutinskih zadataka,
-            praćenje performansi i sigurnosne procedure; podrška korisnicima i dokumentovanje procesa.
-          </li>
-          <li>
-            <strong>Administrativni asistent — CASA DI MODA</strong><br/>
-            Rad sa dokumentacijom i evidencijama, koordinacija internih procesa, ad-hoc IT podrška i poboljšanje operativnih tokova.
-          </li>
+      <div class="card border-slate-800">
+        <h3 class="font-semibold" data-i18n="exp.work">Work Experience</h3>
+        <ul class="mt-2 text-sm text-slate-300 space-y-3">
+          <li><strong>AQUA PROMET DOO — IT Engineer / DBA</strong></li>
+          <li><strong>CASA DI MODA — Administrative Assistant</strong></li>
         </ul>
       </div>
-
-      <div class="card">
-        <h3 class="font-semibold">Obrazovanje</h3>
-        <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">
-          <strong>Toplička akademija strukovnih studija</strong> — Primenjene informacione tehnologije
-        </p>
-        <p class="mt-3 text-sm text-slate-600 dark:text-slate-300">
-          Kursevi i sertifikati: <strong>Java</strong>, <strong>CCNA</strong>, <strong>Git</strong>, <strong>Python</strong>.
-        </p>
+      <div class="card border-slate-800">
+        <h3 class="font-semibold" data-i18n="exp.edu">Education</h3>
+        <p class="mt-2 text-sm text-slate-300">Toplička Academy of Applied Studies — Applied IT</p>
+        <p class="mt-3 text-sm text-slate-300">Courses & certificates: Java, CCNA, Git, Python</p>
       </div>
     </div>
   </section>
 
-  <!-- Kontakt -->
-  <section id="kontakt" class="max-w-6xl mx-auto px-4 sm:px-6 py-14">
-    <div class="card text-center">
-      <h2 class="text-2xl font-bold">📫 Kontakt</h2>
-      <p class="mt-2 text-slate-600 dark:text-slate-300">Otvoren sam za saradnju i freelance projekte.</p>
+  <!-- Contact -->
+  <section id="contact" class="max-w-6xl mx-auto px-4 sm:px-6 py-14">
+    <div class="card text-center border-slate-800 ring-accent">
+      <h2 class="text-2xl font-bold" data-i18n="contact.title">📫 Contact</h2>
+      <p class="mt-2 text-slate-300" data-i18n="contact.text">Open to freelance and remote collaboration.</p>
       <div class="mt-5 flex justify-center gap-3">
-        <a href="mailto:nemanja.s.ja95@gmail.com" class="inline-flex items-center rounded-2xl bg-indigo-600 text-white px-4 py-2 text-sm hover:bg-indigo-500">Pošalji email</a>
-        <a href="https://github.com/Neicle" class="inline-flex items-center rounded-2xl border border-slate-300/70 dark:border-slate-700 px-4 py-2 text-sm hover:bg-slate-50 dark:hover:bg-slate-900">GitHub</a>
+        <a href="mailto:nemanja.s.ja95@gmail.com"
+           class="inline-flex items-center rounded-2xl bg-sky-600 text-white px-4 py-2 text-sm hover:bg-sky-500">
+           <span data-i18n="cta.email">Send email</span>
+        </a>
+        <a href="https://github.com/Neicle"
+           class="inline-flex items-center rounded-2xl border border-slate-700 px-4 py-2 text-sm hover:border-sky-500">
+          GitHub
+        </a>
       </div>
     </div>
   </section>
 
-  <footer class="py-10 text-center text-sm text-slate-500">
-    <p>&copy; <span id="year"></span> Nemanja Stojanović. Sva prava zadržana.</p>
+  <footer class="py-10 text-center text-sm text-slate-400">
+    <p>&copy; <span id="year"></span> Nemanja Stojanović. All rights reserved.</p>
   </footer>
 
   <script>
-    // footer godina
+    // footer year
     document.getElementById('year').textContent = new Date().getFullYear();
-    // tema
-    const toggle = document.getElementById('themeToggle');
-    function applyTheme(t){
-      document.documentElement.classList.toggle('dark', t === 'dark');
-      localStorage.setItem('theme', t);
-    }
-    const saved = localStorage.getItem('theme');
-    applyTheme(saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));
-    toggle.addEventListener('click', ()=>{
-      const next = document.documentElement.classList.contains('dark') ? 'light' : 'dark';
+
+    // theme toggle
+    const themeBtn = document.getElementById('themeToggle');
+    function applyTheme(t){ document.documentElement.classList.toggle('light', t==='light'); localStorage.setItem('theme',t); }
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    applyTheme(savedTheme);
+    themeBtn.addEventListener('click', ()=>{
+      const next = document.documentElement.classList.contains('light') ? 'dark' : 'light';
       applyTheme(next);
+    });
+
+    // simple i18n
+    const t = {
+      en: { "nav.projects":"Projects","nav.skills":"Skills","nav.experience":"Experience","nav.contact":"Contact","ui.theme":"Theme","hero.subtitle":"IT Engineer • Database Admin • Python & Java • CCNA","hero.text":"I build automation and web-scraping pipelines with robust SQLite/CSV data flows and AI/heuristic scoring. Focus on stable crawlers (pagination, retries, anti-bot), clean exports, and practical insights.","cta.contact":"Contact","projects.title":"Featured Projects","projects.kp.text":"Automated KupujemProdajem scraping, heuristic/AI scoring and top-deals list.","projects.ai.text":"Score 0–100 based on price, description and seller reputation (works offline with heuristics).","projects.psit.text":"Remote IT support and networking services (CCNA): routers/switches, servers, backup & security.","skills.title":"🧰 Skills","skills.desc":"Strong foundation in programming, automation, database administration and networking. Skilled at building scraping pipelines, AI evaluation logic, and providing IT support both locally and remotely.","exp.title":"💼 Experience & Education","exp.work":"Work Experience","exp.edu":"Education","contact.title":"📫 Contact","contact.text":"Open to freelance and remote collaboration.","cta.email":"Send email"},
+      sr: { "nav.projects":"Projekti","nav.skills":"Veštine","nav.experience":"Iskustvo","nav.contact":"Kontakt","ui.theme":"Tema","hero.subtitle":"IT inženjer • Administracija baza • Python & Java • CCNA","hero.text":"Bavim se automatizacijom i web-scrapingom sa stabilnim SQLite/CSV tokovima podataka i AI/heurističkim skoringom. Fokus na stabilne crawlere (paginacija, retry, anti-bot), čiste izvode i praktične uvide.","cta.contact":"Kontakt","projects.title":"Istaknuti projekti","projects.kp.text":"Automatsko prikupljanje sa KupujemProdajem, heurističko/AI bodovanje i lista top ponuda.","projects.ai.text":"Skor 0–100 na osnovu cene, opisa i reputacije prodavca (radi i offline preko heuristika).","projects.psit.text":"Udaljena IT podrška i mrežne usluge (CCNA): ruteri/svičevi, serveri, bekap i bezbednost.","skills.title":"🧰 Veštine","skills.desc":"Snažna osnova u programiranju, automatizaciji, administraciji baza i mrežama. Vešt u izradi scraping pipeline-ova, AI evaluacija i pružanju IT podrške lokalno i na daljinu.","exp.title":"💼 Iskustvo i obrazovanje","exp.work":"Radno iskustvo","exp.edu":"Obrazovanje","contact.title":"📫 Kontakt","contact.text":"Otvoren sam za freelance i remote saradnju.","cta.email":"Pošalji email"}
+    };
+
+    const langBtn = document.getElementById('langToggle');
+    function applyLang(l){
+      document.documentElement.lang = l;
+      localStorage.setItem('lang', l);
+      langBtn.textContent = (l === 'sr') ? 'SR' : 'EN';
+      document.querySelectorAll('[data-i18n]').forEach(el=>{
+        const key = el.getAttribute('data-i18n');
+        if (t[l] && t[l][key]) el.textContent = t[l][key];
+      });
+      if(l==='sr') document.querySelector('footer p').innerHTML = `&copy; <span id="year">${new Date().getFullYear()}</span> Nemanja Stojanović. Sva prava zadržana.`;
+      else document.querySelector('footer p').innerHTML = `&copy; <span id="year">${new Date().getFullYear()}</span> Nemanja Stojanović. All rights reserved.`;
+    }
+    const savedLang = localStorage.getItem('lang') || 'en';
+    applyLang(savedLang);
+    langBtn.addEventListener('click', ()=>{
+      const next = (localStorage.getItem('lang') || 'en') === 'en' ? 'sr' : 'en';
+      applyLang(next);
     });
   </script>
 </body>
